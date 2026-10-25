@@ -1,0 +1,1 @@
+"""Widok graficzny (tkinter)."""

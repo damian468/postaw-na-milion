@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+data/pnm.db
+data/settings.json

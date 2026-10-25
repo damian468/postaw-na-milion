@@ -1,0 +1,550 @@
+/* ============================================================
+   Style widoku tekstowego „Postaw na milion”.
+   Kolory pochodzą ze zmiennych motywu ($primary, $accent...),
+   więc zmiana motywu w ustawieniach przemalowuje całą aplikację.
+   ============================================================ */
+
+/* Tło każdego ekranu */
+Screen {
+    background: $background;
+}
+
+/* Wspólny tytuł ekranów */
+.screen-title {
+    width: 100%;
+    content-align: center middle;
+    text-align: center;
+    color: $accent;
+    padding: 1 0;
+}
+
+/* Panel diagnostyczny (F2) – nakładka w prawym dolnym rogu */
+#diag {
+    dock: right;
+    layer: overlay;
+    width: 30;
+    height: auto;
+    max-height: 80%;
+    margin: 1 1 2 0;
+    padding: 0 1;
+    background: $panel 90%;
+    border: round $warning;
+    color: $foreground;
+    display: none;
+}
+
+/* ---------------------------------------------- menu główne */
+
+/* Układ trzykolumnowy */
+#menu-layout {
+    height: 1fr;
+}
+
+/* Boczne animacje deszczu pieniędzy */
+.rain {
+    width: 1fr;
+    height: 100%;
+}
+
+/* Środkowa kolumna */
+#menu-center {
+    width: 92;
+    height: 100%;
+    align: center middle;
+}
+
+/* Logo */
+#logo {
+    width: 100%;
+    height: auto;
+}
+
+/* Hasło pod logo */
+#tagline {
+    width: 100%;
+    text-align: center;
+    color: $secondary;
+    margin: 1 0;
+}
+
+/* Menu strzałkowe */
+ArrowMenu {
+    width: 44;
+    height: auto;
+    border: round $primary 60%;
+    padding: 0 1;
+    background: $surface;
+}
+
+/* Menu w fokusie */
+ArrowMenu:focus {
+    border: round $accent;
+}
+
+/* Wycentrowanie menu w kolumnie */
+#main-menu {
+    margin: 0 0 0 24;
+}
+
+/* Pozycja menu */
+MenuEntry {
+    width: 100%;
+    height: 1;
+    text-align: center;
+    color: $foreground 80%;
+}
+
+/* Wybrana pozycja menu */
+MenuEntry.-selected {
+    background: $accent;
+    color: $background;
+    text-style: bold;
+}
+
+/* Opis pozycji menu */
+#menu-desc {
+    width: 100%;
+    height: 2;
+    text-align: center;
+    color: $foreground 70%;
+    margin-top: 1;
+}
+
+/* Pasek informacji */
+#menu-status {
+    width: 100%;
+    text-align: center;
+    color: $secondary;
+}
+
+/* --------------------------------------------------- gra */
+
+/* Nagłówek z numerem pytania, kontem i zegarem */
+#game-header {
+    height: 7;
+}
+
+/* Pole numeru pytania */
+#round-box {
+    width: 20;
+    height: 100%;
+    border: round $primary 60%;
+    content-align: center middle;
+    text-align: center;
+}
+
+/* Pole stanu konta */
+#bank-box {
+    width: 1fr;
+    height: 100%;
+    border: round $accent;
+    content-align: center middle;
+    text-align: center;
+}
+
+/* Pole zegara */
+#timer-box {
+    width: 28;
+    height: 100%;
+    border: round $primary 60%;
+    padding: 0 1;
+    text-align: center;
+}
+
+/* Część główna */
+#game-body {
+    height: 1fr;
+}
+
+/* Drabinka pytań */
+#ladder {
+    width: 26;
+    height: 100%;
+    border: round $primary 40%;
+    padding: 0 1;
+}
+
+/* Przełącznik widoków */
+#switcher {
+    width: 1fr;
+    height: 100%;
+}
+
+/* Widok wyboru kategorii */
+#category-view {
+    height: 100%;
+    align: center middle;
+}
+
+/* Tytuł wyboru kategorii */
+#category-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1;
+}
+
+/* Rząd kart */
+#category-cards {
+    height: 11;
+    align: center middle;
+}
+
+/* Karta kategorii */
+CategoryCard {
+    width: 30;
+    height: 9;
+    margin: 0 2;
+    border: round $primary 50%;
+    background: $surface;
+    content-align: center middle;
+    text-align: center;
+}
+
+/* Wybrana karta */
+CategoryCard.-selected {
+    border: heavy $accent;
+    background: $panel;
+    color: $accent;
+}
+
+/* Podpowiedź pod kartami */
+#category-hint {
+    width: 100%;
+    text-align: center;
+    color: $foreground 60%;
+    margin-top: 1;
+}
+
+/* Widok planszy */
+#board-view {
+    height: 100%;
+}
+
+/* Panel pytania */
+#question {
+    width: 100%;
+    height: auto;
+    min-height: 4;
+    border: round $primary;
+    background: $surface;
+    text-align: center;
+    padding: 0 2;
+}
+
+/* Pasek puli */
+#pool {
+    height: 1;
+    margin: 1 0 0 0;
+}
+
+/* Kontener kolumn */
+#answers {
+    height: 1fr;
+    padding: 0 0;
+}
+
+/* Kolumna odpowiedzi */
+AnswerColumn {
+    width: 1fr;
+    height: 100%;
+    margin: 0 1;
+    padding: 0 1;
+    border: round $primary 50%;
+    border-title-align: center;
+    border-title-color: $primary;
+    border-title-style: bold;
+}
+
+/* Wybrana kolumna */
+AnswerColumn.-selected {
+    border: heavy $accent;
+    border-title-color: $accent;
+    background: $panel;
+}
+
+/* Otwarta zapadnia */
+AnswerColumn.-opened {
+    border: round $error 70%;
+    border-title-color: $error;
+    background: $error 8%;
+}
+
+/* Poprawna odpowiedź */
+AnswerColumn.-correct {
+    border: double $success;
+    border-title-color: $success;
+    background: $success 12%;
+}
+
+/* Mignięcie przy złamaniu zasad */
+AnswerColumn.-flash {
+    border: heavy $error;
+    background: $error 25%;
+}
+
+/* Linia statusu */
+#status {
+    height: 2;
+    width: 100%;
+    text-align: center;
+    content-align: center middle;
+}
+
+/* ------------------------------------------------- podsumowanie */
+
+/* Kolumna podsumowania */
+#summary {
+    height: 100%;
+    padding: 1 2;
+}
+
+/* Nagłówek podsumowania */
+#summary-title {
+    width: 100%;
+    text-align: center;
+    color: $accent;
+}
+
+/* Kwota z iskierkami */
+#fireworks {
+    height: 9;
+    width: 100%;
+}
+
+/* Linia informacji */
+#summary-info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1;
+}
+
+/* Dolna część */
+#summary-bottom {
+    height: 1fr;
+}
+
+/* Tabela rund */
+#summary-table {
+    width: 1fr;
+    height: 100%;
+}
+
+/* Menu po prawej */
+#summary-menu {
+    width: 30;
+    margin-left: 2;
+}
+
+/* --------------------------------------------------- ustawienia */
+
+/* Kolumna ustawień */
+#settings {
+    width: 80;
+    height: auto;
+    margin: 1 0 0 0;
+    align-horizontal: center;
+}
+
+/* Wycentrowanie kolumny ustawień na ekranie */
+SettingsScreen {
+    align: center top;
+}
+
+/* Wiersz ustawienia */
+SettingRow {
+    width: 100%;
+    height: 1;
+    padding: 0 2;
+    margin-bottom: 1;
+}
+
+/* Wybrany wiersz */
+SettingRow.-selected {
+    background: $panel;
+    color: $accent;
+    text-style: bold;
+}
+
+/* Opis ustawienia */
+#settings-desc {
+    width: 100%;
+    height: 3;
+    border: round $primary 50%;
+    padding: 0 1;
+    margin-top: 1;
+}
+
+/* Notka o zapisie */
+#settings-note {
+    width: 100%;
+    text-align: center;
+    margin-top: 1;
+}
+
+/* ---------------------------------------------------- ranking */
+
+/* Kolumna rankingu */
+#ranking {
+    height: 100%;
+    padding: 0 2;
+}
+
+/* Zakładki */
+#ranking-tabs {
+    height: 1fr;
+}
+
+/* Tabele rankingu */
+#ranking DataTable {
+    height: 1fr;
+}
+
+/* Tekst statystyk */
+#stats-text {
+    padding: 1 4;
+}
+
+/* ------------------------------------------------- baza pytań */
+
+/* Kolumna bazy */
+#bank {
+    height: 100%;
+    padding: 0 2;
+}
+
+/* Część główna bazy */
+#bank-body {
+    height: 1fr;
+}
+
+/* Lista kategorii */
+#bank-categories {
+    width: 32;
+    height: 100%;
+    border: round $primary 50%;
+}
+
+/* Lista kategorii w fokusie */
+#bank-categories:focus {
+    border: round $accent;
+}
+
+/* Prawa część */
+#bank-right {
+    width: 1fr;
+    height: 100%;
+    margin-left: 1;
+}
+
+/* Tabela pytań */
+#bank-table {
+    height: 1fr;
+    border: round $primary 50%;
+}
+
+/* Tabela w fokusie */
+#bank-table:focus {
+    border: round $accent;
+}
+
+/* Szczegóły pytania */
+#bank-detail {
+    height: 5;
+    border: round $secondary;
+    padding: 0 1;
+}
+
+/* ------------------------------------------------------- pomoc */
+
+/* Kolumna pomocy */
+#help {
+    height: 100%;
+    padding: 0 4;
+}
+
+/* Treść strony */
+#help-body {
+    height: 1fr;
+    border: round $primary 50%;
+    padding: 1 3;
+    background: $surface;
+}
+
+/* Wskaźnik stron */
+#help-dots {
+    width: 100%;
+    text-align: center;
+    color: $accent;
+    padding: 1 0;
+}
+
+/* ---------------------------------------------------- ładowanie */
+
+/* Animacja ładowania */
+LoadingAnimation {
+    width: 50;
+    height: 3;
+}
+
+/* ------------------------------------------------- okna dialogowe */
+
+/* Przyciemnione tło pod oknem */
+ModalScreen {
+    align: center middle;
+    background: $background 70%;
+}
+
+/* Ramka okna */
+.dialog {
+    width: 64;
+    height: auto;
+    border: thick $accent;
+    background: $surface;
+    padding: 1 2;
+}
+
+/* Tytuł okna */
+.dialog-title {
+    width: 100%;
+    text-align: center;
+    text-style: bold;
+    color: $accent;
+    margin-bottom: 1;
+}
+
+/* Treść okna */
+.dialog-body {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1;
+}
+
+/* Rząd przycisków */
+.dialog-buttons {
+    width: 100%;
+    height: auto;
+    align: center middle;
+}
+
+/* Przycisk w oknie */
+.dialog-buttons Button {
+    margin: 0 2;
+}
+
+/* Napis PAUZA */
+.pause-art {
+    width: 100%;
+    text-align: center;
+    color: $warning;
+    margin-bottom: 1;
+}
+
+/* Formularz pytania */
+.form {
+    width: 80;
+}
+
+/* Pola formularza */
+.form Input, .form Select {
+    margin-bottom: 1;
+}
